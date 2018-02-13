@@ -3,58 +3,39 @@ package problems;
 import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
-
-		/*	
-		"OOXXOXXOOO"와 같은 OX퀴즈의 결과가 있다. 
-		O는 문제를 맞은 것이고, X는 문제를 틀린 것이다. 
-		문제를 맞은 경우 그 문제의 점수는 그 문제까지 연속된 O의 개수가 된다. 
-		예를 들어, 10번 문제의 점수는 3이 된다.
-
-		"OOXXOXXOOO"의 점수는 1+2+0+0+1+0+0+1+2+3 = 10점이다.
-
-		OX퀴즈의 결과가 주어졌을 때, 점수를 구하는 프로그램을 작성하시오.*/
-
-		Scanner scanner = new Scanner(System.in);
-		int testCaseCount = scanner.nextInt(); //테이트케이스 개수
-		int score = 0; //점수
-		int temp = 0; //임시변수
-		String str=""; //OX퀴즈 결과
-		char[] letter = null; //OX결과 한문자씩 담아놓은 배열
-		int[] scoreArr = new int[testCaseCount];
 		
-		for(int j = 0; j < testCaseCount; j++) {
-			score = 0; 
-			str = scanner.next();
-			letter = new char[str.length()];
+		/*
+		다솜이는 은진이의 옆집에 새로 이사왔다. 
+		다솜이는 자기 방 번호를 예쁜 플라스틱 숫자로 문에 붙이려고 한다.
 
-			for(int i = 0; i < str.length(); i++) {
-				letter[i] = str.charAt(i);
-				temp = i;
-
-				if(letter[i]=='O') {
-					//정답일때
-					if(i==0) {
-						score+=1;
-					} else {
-						score+=1;
-
-						inner : while(temp-1 >= 0) {
-							if(letter[temp-1]=='O') {
-								score+=1;
-								temp--;
-							} else {
-								break inner;
-							}
-						} //while
-					}
-				}
-			} 
-			scoreArr[j] = score;
-		} //for
-		for(int data : scoreArr) {
-			System.out.println(data);
+		다솜이의 옆집에서는 플라스틱 숫자를 한 세트로 판다. 
+		한 세트에는 0번부터 9번까지 숫자가 하나씩 들어있다. 
+		다솜이의 방 번호가 주어졌을 때, 필요한 세트의 개수의 최소값을 출력하시오. 
+		(6은 9를 뒤집어서 이용할 수 있고, 9는 6을 뒤집어서 이용할 수 있다.)
+		
+		첫째 줄에 다솜이의 방 번호 N이 주어진다. N은 1,000,000보다 작거나 같은 자연수 또는 0이다.
+		첫째 줄에 필요한 세트의 개수를 출력한다.
+		
+		*/
+		String input;
+		char roomNum[];
+		int plastic[][] = new int[10][1]; //0~9까지의 각 숫자마다 2개의 배열이 있음 0(사용안됨),1(사용됨)
+		int count;
+	
+		//todolist
+		//모든 숫자마다 0으로 초기화하기
+		
+		Scanner scanner = new Scanner(System.in);
+		input = scanner.next();
+		roomNum = new char[input.length()];
+		
+		for(int i = 0; i <roomNum.length; i++) {
+			roomNum[i] = input.charAt(i);
+			
+			
 		}
+		
+	
 		
 	} 
 }
-
